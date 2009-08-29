@@ -1,0 +1,1038 @@
+<html>
+
+<head>
+	<title>Wetlands Life</title>
+
+<style type="text/css">
+
+body
+{
+	font-family: sans-serif;
+	color: #000000;
+	background:#FFFFFF;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+
+.popUpList
+{
+	position:absolute;
+	visibility:hidden;
+
+	background:#2e3182;
+	border-style: solid;
+	border-color: #191b47;
+	border: 1px 1px 1px 1px;
+
+	z-index: 100;
+}
+
+
+.BlueBox
+{
+	color: #000000;
+	font-weight: bold;
+	background: #6668a9;
+}
+
+
+.BlueBoxCorner
+{
+	width: 16px;
+}
+
+
+#SandLeft
+{
+	position: absolute;
+	z-index: -1000;
+}
+
+#CreditsDiv
+{
+	font-size: 9pt;
+}
+
+
+.ContentDiv
+{
+	position: absolute;
+	visibility: hidden;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	z-index: -100;
+}
+
+
+.ContentTable
+{
+	width: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5ex;
+}
+
+
+#HeaderTable
+{
+	background: transparent;
+	width: 100%;
+}
+
+#HeaderDiv
+{
+	text-align: right;
+	width: 100%;
+}
+
+#MenuTable
+{
+	padding-bottom: 2ex;
+}
+
+#SpacerDiv
+{
+	height: 475px;
+}
+
+/* for Info divs */
+#ContentIntroduction, #ContentAbout_JD
+{
+	z-index: 0;
+	font-weight: bold;
+	text-align: center;
+}
+
+#ContentIntroduction table, #ContentAbout_JD table
+{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.headline
+{
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.bold
+{
+	font-weight: bolder;
+	color: #376677;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+a img
+{
+	border: 0 0 0 0;
+	border-style: none;
+}
+/* END info divs */
+
+</style>
+
+</head>
+
+<body>
+
+<img id="SandLeft" src="img/sand_left_2.jpg">
+
+<div>
+<table id="HeaderTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td>
+		<a name="pageTop"><img src="img/wetlands_life_water.gif"></a>
+	</td>
+	<td class="HeaderRightCell">
+		<div id="HeaderDiv"><img src="img/elements.jpg"></div>
+	</td>
+</tr>
+</table>
+</div>
+
+<!-- BEGIN Menu -->
+<table id="MenuTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td><a href="#pageTop" onclick="Swapper.show('ContentIntroduction');"><img id="IntroductionBtn" src="img/menu/introduction_btn.gif"></a></td>
+	<td>
+		<span id="LandItem"><img src="img/menu/land.gif"></span><br>
+		<span id="LandList" class="popUpList">
+			<span id="PlantItem"><img src="img/menu/plants.gif"></span>
+			<span id="PlantList" class="popUpList">
+				<span id="NativeItem"><img src="img/menu/native.gif"></span>
+				<span id="NativeList" class="popUpList">
+					<a href="#pageTop" onclick="loadImg('LupineImg'); Swapper.show('ContentLupine');"><img id="LupineBtn" src="img/menu/lupine.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('PickleweedImg'); Swapper.show('ContentPickleweed');"><img id="PickleweedBtn" src="img/menu/pickleweed.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('WillowImg'); Swapper.show('ContentWillow');"><img id="WillowBtn" src="img/menu/willow.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('PhaceliaImg'); Swapper.show('ContentPhacelia');"><img id="PhaceliaBtn" src="img/menu/phacelia.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('HeliotropeImg'); Swapper.show('ContentHeliotrope');"><img id="HeliotropeBtn" src="img/menu/heliotrope.gif"></a><br>
+				</span><br>
+
+				<span id="InvasiveItem"><img src="img/menu/invasive.gif"></span>
+				<span id="InvasiveList" class="popUpList">
+					<a href="#pageTop" onclick="loadImg('EuphorbiaImg'); Swapper.show('ContentEuphorbia');"><img id="EuphorbiaBtn" src="img/menu/euphorbia.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('IceplantImg'); Swapper.show('ContentIceplant');"><img id="IceplantBtn" src="img/menu/iceplant.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('FoxtailImg'); Swapper.show('ContentFoxtail');"><img id="FoxtailBtn" src="img/menu/foxtail.gif"></a><br>
+				</span><br>
+			</span><br>
+
+			<span id="AnimalItem"><img src="img/menu/animals.gif"></span>
+			<span id="AnimalList" class="popUpList">
+				<span id="NativeAnimalItem"><img src="img/menu/native.gif"></span>
+				<span id="NativeAnimalList" class="popUpList">
+					<a href="#pageTop" onclick="loadImg('Legless_LizardImg');Swapper.show('ContentLegless_Lizard');"><img id="Legless_LizardBtn" src="img/menu/legless_lizard.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('CottontailImg');Swapper.show('ContentCottontail');"><img id="CottontailBtn" src="img/menu/cottontail.gif"></a><br>
+				</span><br>
+
+				<span id="InvasiveAnimalItem"><img src="img/menu/invasive.gif"></span>
+				<span id="InvasiveAnimalList" class="popUpList">
+					<a href="#pageTop" onclick="loadImg('Red_FoxImg'); Swapper.show('ContentRed_Fox');"><img id="Red_FoxBtn" src="img/menu/red_fox.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('House_CatImg'); Swapper.show('ContentHouse_Cat');"><img id="House_CatBtn" src="img/menu/house_cat.gif"></a><br>
+					<a href="#pageTop" onclick="loadImg('SnailImg'); Swapper.show('ContentSnail');"><img id="SnailBtn" src="img/menu/snail.gif"></a><br>
+				</span><br>
+			</span>
+			<br>
+		</span>
+	</td>
+	<td>
+		<span id="SeaItem"><img src="img/menu/sea.gif"></span><br>
+		<span id="SeaList" class="popUpList">
+			<a href="#pageTop" onclick="loadImg('FishImg'); Swapper.show('ContentFish');"><img id="FishBtn" src="img/menu/fish.gif"></a><br>
+			<a href="#pageTop" onclick="loadImg('EelgrassImg'); Swapper.show('ContentEelgrass');"><img id="EelgrassBtn" src="img/menu/eelgrass.gif"></a><br>
+			<a href="#pageTop" onclick="loadImg('PollutionImg'); Swapper.show('ContentPollution');"><img id="PollutionBtn" src="img/menu/pollution.gif"></a><br>
+		</span>
+	</td>
+	<td>
+		<span id="AirItem"><img src="img/menu/air.gif"></span><br>
+		<span id="AirList" class="popUpList">
+			<a href="#pageTop" onclick="loadImg('BumblebeeImg'); Swapper.show('ContentBumblebee');"><img id="BumblebeeBtn" src="img/menu/bumblebee.gif"></a><br>
+			<a href="#pageTop" onclick="loadImg('EgretImg'); Swapper.show('ContentEgret');"><img id="EgretBtn" src="img/menu/egret.gif"></a><br>
+			<a href="#pageTop" onclick="loadImg('HeronImg'); Swapper.show('ContentHeron');"><img id="HeronBtn" src="img/menu/heron.gif"></a><br>
+		</span>
+	</td>
+	<td><a href="#pageTop" onclick="Swapper.show('ContentAbout_JD');"><img id="About_JDBtn" src="img/menu/about_jd_btn.gif"></a></td>
+</tr>
+</table>
+<!-- END Menu -->
+
+
+<div id="ContentRed_Fox" class="ContentDiv">
+<img id="Red_FoxImg" src="img/photo/Vulpes_vulpes_sitting_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Red Foxes were introduced near some wetlands for fox hunting and fur production. These expert hunters often predate on native birds and small animals.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentHouse_Cat" class="ContentDiv">
+<img id="House_CatImg" src="img/photo/cat_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Surprisingly, pet and feral House Cats stalk the wetlands preying on birds, mice, lizards and other small animals. Cat guardians who live near wetlands should keep their pets indoors and provide adequate food to prevent the cats from hunting native species.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentSnail" class="ContentDiv">
+<img id="SnailImg" src="img/photo/snail_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Some snails accidentally brought from other parts of the world eat wetlands plants and have few predators to keep them in check!</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentLegless_Lizard" class="ContentDiv">
+<img id="Legless_LizardImg" src="img/photo/Anniella_pulchra_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Rare and beautiful Legless Lizards burrow beneath the sand, eating insects in the wetlands. Although they have no legs and appear similar to snakes, they are evolutionarily descended from lizards.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentCottontail" class="ContentDiv">
+<img id="CottontailImg" src="img/photo/cottontail_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Cottontail rabbits can sometimes be glimpsed bounding away for cover of brush as one treks through the wetlands.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentLupine" class="ContentDiv">
+<img id="LupineImg" src="img/photo/silver_dune_lupine_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Silver Dune Lupine has characteristic fuzzy silver leaves, purple flowers, and seed pods.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentPickleweed" class="ContentDiv">
+<img id="PickleweedImg" src="img/photo/pickleweed_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Pickleweed is a unique succulent adapted to live in salty soil. It is home and food for insects, birds and other organisms.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentPhacelia" class="ContentDiv">
+<img id="PhaceliaImg" src="img/photo/Phacelia_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Branching Phacelia grows in wetland meadows and slopes and has an unusual, beautiful appearance.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentHeliotrope" class="ContentDiv">
+<img id="HeliotropeImg" src="img/photo/Heliotropium_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">If you look closely at the carpet of white flowers covering some wetland areas, you'll see it's made of Heliotrope.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentWillow" class="ContentDiv">
+<img id="WillowImg" src="img/photo/willow_closeup_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Willow was used by native peoples for tools, construction and medicinal purposes.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+
+<div id="ContentEuphorbia" class="ContentDiv">
+<img id="EuphorbiaImg" src="img/photo/euphrbia_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Euphorbia is a quickly spreading invasive plant with white sap.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentFoxtail" class="ContentDiv">
+<img id="FoxtailImg" src="img/photo/foxtail_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Foxtails have invaded large regions of wetlands, with an annoying habit of sticking in people's socks! They also prevent native plants from growing.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentIceplant" class="ContentDiv">
+<img id="IceplantImg" src="img/photo/Carpobrotus_edulis01_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Iceplant which is originally from Africa has adapted to live in some wetlands. It grows like an island of green french fries, drowning out other plants.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentFish" class="ContentDiv">
+<img id="FishImg" src="img/photo/goby_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Estuary waters bordering the wetlands are nurseries for a vast variety of fish, aquatic invertibrates and other marine life.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentEelgrass" class="ContentDiv">
+<img id="EelgrassImg" src="img/photo/eelgrass_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Eelgrass grows underwater, where it is home for fish and provides food for thousands of tiny organisms. It is important to our ocean's overall health.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentPollution" class="ContentDiv">
+<img id="PollutionImg" src="img/photo/pollution_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">An immediate solution to plastic debris in the ocean is for humans to develop biodegradable plastic alternatives. Plastics in the ocean and shores are a serious problem as many animals are killed by unknowingly eating human-made materials. Volunteer cleanup and purchasing biodegradable materials will also help.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentBumblebee" class="ContentDiv">
+<img id="BumblebeeImg" src="img/photo/Bumblebee_on_Sea_Holly_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Native Bumblebees are important pollinators!</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentEgret" class="ContentDiv">
+<img id="EgretImg" src="img/photo/762px-Great_Egret_Fish_300h_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Beautiful snow-white Egrets can be seen hunting or flying overhead.</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+
+<div id="ContentHeron" class="ContentDiv">
+<img id="HeronImg" src="img/photo/748px-Great_Blue_Heron_Ardea_herodias_in_flight_sm_blank.gif">
+<table class="ContentTable" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ul.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ur.gif"></td>
+</tr>
+<tr>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBox">Majestic Great Blue Herons float over the wetlands with wingspans close to 7 feet long!</td>
+	<td class="BlueBox">&nbsp;</td>
+</tr>
+<tr>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_ll.gif"></td>
+	<td class="BlueBox">&nbsp;</td>
+	<td class="BlueBoxCorner"><img src="img/blue_corner_sm_lr.gif"></td>
+</tr>
+</table>
+</div>
+
+<div id="ContentIntroduction" class="ContentDiv">
+	<span class="headline">Introduction</span>
+	<table border="0">
+		<tr>
+			<td><img src="img/jd_portrait.jpg"></td>
+			<td>
+				<p>Hi! And welcome to my demo page. From here you can explore the life and environment of a typical West-Coast wetlands using the menus above.</p>
+				<p>Be sure to check out the <a href="#pageTop"><span onclick="Swapper.show('ContentAbout_JD');" class="bold">About 'JD'</span></a> page before you go!</p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="ContentAbout_JD" class="ContentDiv">
+	<span class="headline">About Joe Concanon Dochterman</span>
+	<table border="0">
+		<tr>
+			<td><img src="img/jd_ballona_tour.jpg"></td>
+			<td>
+				<p>Apart from extensive volunteer work done at Ballona Wetlands, I specialize in JavaScript programming and implementing custom Dynamic HTML behaviors. My educational focus has been on graphics programming in C++ and related languages.</p>
+				<p>Providing cost-effective technology solutions to nonprofit organizations is a dream of mine-it is one way I can make the world a better place for generations to come.</p>
+				<p>Thank you for visiting!</p>
+				<p>-JD<br>323 360-3480<br>ecodragon@mail.com</p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div id="SpacerDiv">
+&nbsp;
+</div>
+
+<p>A Demo Page by Joe Concanon Dochterman - August, 2009</p>
+<div id="CreditsDiv">
+Image credits: <a href="http://odd-stock.deviantart.com">Odd-stock</a> /
+<span xmlns:cc="http://creativecommons.org/ns#" about="http://www.flickr.com/photos/ppdigital/2057249916/"><a rel="cc:attributionURL" href="http://www.flickr.com/photos/ppdigital/">http://www.flickr.com/photos/ppdigital/</a> - <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">CC BY-NC 2.0</a></span>
+/ Ice_9 - Filter Forge /
+<span xmlns:cc="http://creativecommons.org/ns#" about="http://www.flickr.com/photos/78425154@N00/2067805180"><a rel="cc:attributionURL" href="http://www.flickr.com/photos/livenature/">http://www.flickr.com/photos/livenature</a> - <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></span>
+</div>
+
+</body>
+
+<script language="JavaScript">
+
+
+///////////////////
+////Popup Class////
+///////////////////
+
+Popup.static = new Object();
+Popup.static.popups = new Array();
+
+//str ID = value of HTML element | null
+//parent = popup's parent popup | null
+//hides = true | false, can this popup close (be hidden)
+function Popup(htmlId, parent, hides) //ctor
+{
+	this.htmlId = htmlId;
+	this.parent = parent;
+	this.hides = hides;
+
+	this.children = new Array();
+	this.timeoutHide = null;
+
+	this.idNumber = Popup.static.popups.length;
+	Popup.static.popups[this.idNumber] = this;
+
+	if(parent != null)
+		parent.children[parent.children.length] = this;
+
+	if(htmlId == null)
+	{
+		this.ndPopup = null;
+		this.onMouseOverOriginal = null;
+		this.onMouseOutOriginal = null;
+	}
+	else
+	{
+		this.ndPopup = document.getElementById(htmlId);
+
+		if(typeof this.ndPopup.onmouseover == "function")
+			this.onMouseOverOriginal = this.ndPopup.onmouseover;
+
+		this.ndPopup.onmouseover = new Function("Popup.static.popups[" + this.idNumber + "].onMouseOver();");
+
+		if(typeof this.ndPopup.onmouseout == "function")
+			this.onMouseOutOriginal = this.ndPopup.onmouseout;
+
+		this.ndPopup.onmouseout = new Function("Popup.static.popups[" + this.idNumber + "].onMouseOut();");
+	}
+}
+
+
+
+//makes associated node visible; doesn't open next level of children
+function Popup_show()
+{
+	if(this.timeoutClose != null)
+	{
+		clearTimeout(this.timeoutClose);
+		this.timeoutClose = null;
+	}
+
+	if(this.hides == true && this.ndPopup != null)
+		this.ndPopup.style.visibility = "visible";
+}
+Popup.prototype.show = Popup_show;
+
+
+
+//shows associated node and opens next level of children
+function Popup_activate()
+{
+	//if we have siblings, hide siblings
+	if(this.parent != null)
+	{
+		for(var i in this.parent.children)
+		{
+			if(this.parent.children[i] != this)
+				this.parent.children[i].hide();
+		}
+	}
+
+	this.show();
+	this.keepAlive();
+
+	//show children
+	if(this.children != null)
+	{
+		for(var i in this.children)
+			this.children[i].show();
+	}
+}
+Popup.prototype.activate = Popup_activate;
+
+
+
+//ensures this popup doesn't close
+function Popup_keepAlive()
+{
+	if(this.timeoutHide != null)
+	{
+		clearTimeout(this.timeoutHide);
+		this.timeoutHide = null;
+	}
+
+	if(this.parent != null)
+		this.parent.keepAlive();
+}
+Popup.prototype.keepAlive = Popup_keepAlive;
+
+
+
+//makes element and children invisible if appropriate
+function Popup_hide()
+{
+	if(this.timeoutHide != null)
+	{
+		clearTimeout(this.timeoutHide);
+		this.timeoutHide = null;
+	}
+
+	for(var i in this.children)
+		this.children[i].hide();
+
+	if(this.hides == true && this.ndPopup != null)
+		this.ndPopup.style.visibility = "hidden";
+
+}
+Popup.prototype.hide = Popup_hide;
+
+
+
+//sets node to hide after an interval of time
+function Popup_deactivate()
+{
+	if(this.timeoutHide != null)
+		clearTimeout(this.timeoutHide);
+
+	this.timeoutHide = setTimeout("Popup.static.popups[" + this.idNumber + "].hide()", 600);
+}
+Popup.prototype.deactivate = Popup_deactivate;
+
+
+
+function Popup_onMouseOver()
+{
+
+	if(this.onMouseOverOriginal != null)
+		this.onMouseOverOriginal();
+
+	this.activate();
+}
+Popup.prototype.onMouseOver = Popup_onMouseOver;
+
+
+
+function Popup_onMouseOut()
+{
+	if(this.onMouseOutOriginal != null)
+		this.onMouseOutOriginal();
+
+	this.deactivate();
+}
+Popup.prototype.onMouseOut = Popup_onMouseOut;
+
+///////////////////
+//End Popup Class//
+///////////////////
+
+
+/////////////////
+//SwapSet Class//
+/////////////////
+
+//ctor
+function SwapSet()
+{
+	this.swapees = new Object();
+}
+
+function SwapSet_add(swapeeHtmlId)
+{
+	this.swapees[swapeeHtmlId] = document.getElementById(swapeeHtmlId);
+}
+SwapSet.prototype.add = SwapSet_add;
+
+function SwapSet_show(swapeeHtmlId)
+{
+	for(var k in this.swapees)
+	{
+		if(k != swapeeHtmlId)
+			this.swapees[k].style.visibility = "hidden";
+	}
+
+	this.swapees[swapeeHtmlId].style.visibility = "visible";
+}
+SwapSet.prototype.show = SwapSet_show;
+
+/////////////////////
+//END SwapSet Class//
+/////////////////////
+
+
+
+//////////////////
+//RollOver Class//
+//////////////////
+
+RollOver.prototype.rollOvers = new Array();
+
+//ctor
+function RollOver(imgHtmlId, outUrl, overUrl)
+{
+	this.imgNode = document.getElementById(imgHtmlId);
+	this.outUrl = outUrl;
+	this.overUrl = overUrl;
+
+	//save old over/out functions
+	if(typeof this.imgNode.onmouseover == "function")
+		this.oldOnMouseOver = this.imgNode.onmouseover;
+	else
+		this.oldOnMouseOver = null;
+
+	if(typeof this.imgNode.onmouseover == "function")
+		this.oldOnMouseOut = this.imgNode.onmouseout;
+	else
+		this.oldOnMouseOut = null;
+
+	this.idNum = RollOver.prototype.rollOvers.length;
+	RollOver.prototype.rollOvers[this.idNum] = this;
+
+	//set event handlers on img element
+	this.imgNode.onmouseover = new Function("RollOver.prototype.rollOvers[" + this.idNum + "].over();");
+	this.imgNode.onmouseout = new Function("RollOver.prototype.rollOvers[" + this.idNum + "].out();");
+}
+
+
+function RollOver_over()
+{
+	this.imgNode.src = this.overUrl;
+
+	if(this.oldOnMouseOver != null)
+		this.oldOnMouseOver();
+}
+RollOver.prototype.over = RollOver_over;
+
+
+function RollOver_out()
+{
+	this.imgNode.src = this.outUrl;
+
+	if(this.oldOnMouseOut != null)
+		this.oldOnMouseOut();
+}
+RollOver.prototype.out = RollOver_out;
+
+//////////////////////
+//END RollOver Class//
+//////////////////////
+
+//swaps out a blank gif for the real jpg. done to load images from server as needed
+function loadImg(imgHtmlId)
+{
+	var imgNode = document.getElementById(imgHtmlId);
+
+	if(imgNode.src.match("_blank.gif") != null)
+		imgNode.src = imgNode.src.slice(0, imgNode.src.length-10) + ".jpg";
+}
+
+//Make Menus
+var popRoot = new Popup(null, null, false);
+
+var popLandItem = new Popup("LandItem", popRoot, false);
+var popLandList = new Popup("LandList", popLandItem, true);
+var popPlantItem = new Popup("PlantItem", popLandList, false);
+var popPlantList = new Popup("PlantList", popPlantItem, true);
+var popNativeItem = new Popup("NativeItem", popPlantList, false);
+var popNativeList = new Popup("NativeList", popNativeItem, true);
+var popInvasiveItem = new Popup("InvasiveItem", popPlantList, false);
+var popInvasiveList = new Popup("InvasiveList", popInvasiveItem, true);
+
+
+var popAnimalItem = new Popup("AnimalItem", popLandList, false);
+var popAnimalList = new Popup("AnimalList", popAnimalItem, true);
+var popNativeAnimalItem = new Popup("NativeAnimalItem", popAnimalList, false);
+var popInvasiveAnimalItem = new Popup("InvasiveAnimalItem", popAnimalList, false);
+var popNativeAnimalList = new Popup("NativeAnimalList", popNativeAnimalItem, true);
+var popInvasiveAnimalList = new Popup("InvasiveAnimalList", popInvasiveAnimalItem, true);
+
+var popSeaItem = new Popup("SeaItem", popRoot, false);
+var popSeaList = new Popup("SeaList", popSeaItem, true);
+
+var popAirItem = new Popup("AirItem", popRoot, false);
+var popAirList = new Popup("AirList", popAirItem, true);
+
+//Make Content Swapper
+var Swapper = new SwapSet();
+Swapper.add('ContentRed_Fox');
+Swapper.add('ContentHouse_Cat');
+Swapper.add('ContentSnail');
+Swapper.add('ContentCottontail');
+Swapper.add('ContentLegless_Lizard');
+Swapper.add('ContentLupine');
+Swapper.add('ContentPickleweed');
+Swapper.add('ContentHeliotrope');
+Swapper.add('ContentWillow');
+Swapper.add('ContentPhacelia');
+Swapper.add('ContentEuphorbia');
+Swapper.add('ContentFoxtail');
+Swapper.add('ContentIceplant');
+Swapper.add('ContentBumblebee');
+Swapper.add('ContentEgret');
+Swapper.add('ContentHeron');
+Swapper.add('ContentFish');
+Swapper.add('ContentEelgrass');
+Swapper.add('ContentPollution');
+Swapper.add('ContentIntroduction');
+Swapper.add('ContentAbout_JD');
+
+Swapper.show('ContentIntroduction');
+
+//Make RollOvers
+var roHeliotrope = new RollOver('HeliotropeBtn', "img/menu/heliotrope.gif", "img/menu/heliotrope_over.gif");
+var roWillow = new RollOver('WillowBtn', "img/menu/willow.gif", "img/menu/willow_over.gif");
+var roPhacelia = new RollOver('PhaceliaBtn', "img/menu/phacelia.gif", "img/menu/phacelia_over.gif");
+var roPickleweed = new RollOver('PickleweedBtn', "img/menu/pickleweed.gif", "img/menu/pickleweed_over.gif");
+var roLupine = new RollOver('LupineBtn', "img/menu/lupine.gif", "img/menu/lupine_over.gif");
+
+var roEuphorbia = new RollOver('EuphorbiaBtn', "img/menu/euphorbia.gif", "img/menu/euphorbia_over.gif");
+var roIceplant = new RollOver('IceplantBtn', "img/menu/iceplant.gif", "img/menu/iceplant_over.gif");
+var roFoxtail = new RollOver('FoxtailBtn', "img/menu/foxtail.gif", "img/menu/foxtail_over.gif");
+
+var roFish = new RollOver('FishBtn', "img/menu/fish.gif", "img/menu/fish_over.gif");
+var roEelgrass = new RollOver('EelgrassBtn', "img/menu/eelgrass.gif", "img/menu/eelgrass_over.gif");
+var roPollution = new RollOver('PollutionBtn', "img/menu/pollution.gif", "img/menu/pollution_over.gif");
+
+var roLegless_Lizard = new RollOver('Legless_LizardBtn', "img/menu/legless_lizard.gif", "img/menu/legless_lizard_over.gif");
+var roCottontail = new RollOver('CottontailBtn', "img/menu/cottontail.gif", "img/menu/cottontail_over.gif");
+
+var roRed_Fox = new RollOver('Red_FoxBtn', "img/menu/red_fox.gif", "img/menu/red_fox_over.gif");
+var roHouse_Cat = new RollOver('House_CatBtn', "img/menu/house_cat.gif", "img/menu/house_cat_over.gif");
+var roSnail = new RollOver('SnailBtn', "img/menu/snail.gif", "img/menu/snail_over.gif");
+
+var roBumblebee = new RollOver('BumblebeeBtn', "img/menu/bumblebee.gif", "img/menu/bumblebee_over.gif");
+var roEgret = new RollOver('EgretBtn', "img/menu/egret.gif", "img/menu/egret_over.gif");
+var roHeron = new RollOver('HeronBtn', "img/menu/heron.gif", "img/menu/heron_over.gif");
+
+var roIntroductionBtn = new RollOver('IntroductionBtn', "img/menu/introduction_btn.gif", "img/menu/introduction_btn_over.gif");
+var roAbout_JDBtn = new RollOver('About_JDBtn', "img/menu/about_jd_btn.gif", "img/menu/about_jd_btn_over.gif");
+
+</script>
+
+</html>
